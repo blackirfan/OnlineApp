@@ -1,0 +1,167 @@
+// ekhane php code deoya holo
+
+init.php
+
+<?php
+
+
+$host = "localhost";
+$database = "id11837304_student";
+$username = "id11837304_irfan";
+$password = "Coward123";
+
+$con = mysqli_connect($host,$username,$password,$database);
+
+if(!con){
+	echo "Connection fail";
+}else
+{
+
+	echo "Connection successful";
+}
+
+?>
+
+insert.html
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+
+<body>
+	<form action ="add.php" method = "post">
+
+
+		<table>
+
+
+			<tr>
+
+				<td>
+
+					Name:
+				</td>
+				<td><input type="text" name="name"></td>
+
+
+
+			</tr>
+
+
+
+			<tr>
+
+				<td>
+
+					Email:
+				</td>
+				<td><input type="text" name="email"></td>
+
+
+
+			</tr>
+
+
+			<tr>
+
+				<td>
+
+					Contact:
+				</td>
+				<td><input type="text" name="contact"></td>
+
+
+
+			</tr>
+
+
+
+
+
+
+			<tr>
+
+				<td>
+
+					Password:
+				</td>
+				<td><input type="text" name="password"></td>
+
+
+
+			</tr>
+
+
+
+		</table>
+
+		<input type="submit" value="submit">
+	</form>
+
+</body>
+</html>
+
+
+add.php
+
+<?php
+
+
+require "init.php";
+
+$name =$_POST["name"];
+$email =$_POST["email"];
+$contact =$_POST["contact"];
+$password=$_POST["password"];
+
+
+$sql = "insert into users values('$name','$email','$contact','$password');";
+
+
+
+if(mysqli_query($con,$sql))
+{
+	echo "values added";
+}
+else
+{
+	echo "values added";
+}
+
+?>
+
+
+getjsondata.php
+
+<?php
+
+
+$host = "localhost";
+$database = "id11837304_student";
+$username = "id11837304_irfan";
+$password = "Coward123";
+
+
+$sql = "select * from users;";
+
+$con = mysqli_connect($host,$username,$password,$database);
+
+$result = mysqli_query($con,$sql);
+
+$response = array();
+
+while($row = mysqli_fetch_array($result))
+
+{
+
+	array_push($response,array("name"=>$row[0],"email"=>$row[1],"contact"=>$row[2],"password"=>$row[3]));
+
+}
+echo json_encode(array("server_response"=>$response));
+
+mysqli_close($con);
+
+?>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:layout_margin="50dp"
+        android:fontFamily="@font/bilbo_swash_caps"
+        android:gravity="center"
+        android:text="Online Register App"
+
+        android:textSize="40sp" />
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="insert Data"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_design"
+        android:id="@+id/insertBtn"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="show Data"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_design"
+        android:id="@+id/showDataBtn"/>
+
+
+
+</LinearLayout>
